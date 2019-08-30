@@ -2,10 +2,40 @@
   "name": "@brittanyellich/base-react",
   "version": "0.1.0",
   "description": "A basic react project to build other projects from.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn && yarn clean && yarn lint && yarn test && yarn build:commonjs && yarn build:webpack && yarn build:webpack:min",
+    "build:commonjs": "babel src --out-dir lib",
+    "build:webpack": "cross-env FILE_NAME=base-react webpack",
+    "build:webpack:min": "cross-env NODE_ENV=production npm run build:umd",
+    "clean": "rimraf lib dist",
+    "coverage": "yarn test -- --coverage",
+    "lint": "eslint src/**/*.js",
+    "test": "jest"
   },
   "author": "Brittany Ellich <brittany@brittanyellich.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "coveralls": "^3.0.6",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "rimraf": "^3.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "dependencies": {
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "redux": "^4.0.4"
+  }
 }
