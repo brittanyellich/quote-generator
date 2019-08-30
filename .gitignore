@@ -4,3 +4,9 @@ node_modules
 # ignore build files
 lib/*
 lib
+dist
+dist/*
+
+# ignore reports
+reports
+reports/*

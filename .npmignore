@@ -1,5 +1,6 @@
 src
 public
+reports
 .babelrc
 .eslintrc.js
 .gitignore

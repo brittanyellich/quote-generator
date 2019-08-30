@@ -3,7 +3,10 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "airbnb",
-    "airbnb/hooks"
+    "airbnb/hooks",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jest/recommended"
   ],
   "env": {
     "browser": true,
@@ -11,4 +14,8 @@ module.exports = {
     "jest": true
   },
   "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "linebreak-style": 0,
+  }
 }
