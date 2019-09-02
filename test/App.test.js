@@ -4,5 +4,5 @@ import Component from '../src/components/App';
 
 test('App', () => {
   const component = shallow(<Component />);
-  expect(component.find('h1').text()).toEqual('Hello, World!');
+  expect(component.find('div')).toHaveProperty('className', 'quoteApp');
 });

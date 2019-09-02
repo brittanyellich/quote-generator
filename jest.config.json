@@ -8,5 +8,8 @@
     "<rootDir>enzyme.config.js"
   ],
   "clearMocks": true,
-  "coverageDirectory": "reports"
+  "coverageDirectory": "reports",
+  "moduleNameMapper": {
+    "\\.(css|less)$": "identity-obj-proxy"
+  }
 }

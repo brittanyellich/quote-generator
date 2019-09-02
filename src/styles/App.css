@@ -1,3 +1,7 @@
-.app {
+.quoteApp {
   text-align: center
+}
+
+.quoteAuthor {
+  font-style: italic
 }
